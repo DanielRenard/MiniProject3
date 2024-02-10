@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
 });
 
 // Adds a POST route to create a new user
-//http://localhost:8085/api/users/create  Adds a POST route to return all users
-router.post("/create", (req, res) => {
+//http://localhost:8085/api/users/signup  Adds a POST route to return new user
+router.post("/signup", (req, res) => {
   Controllers.userController.createUser(req.body, res);
 });
 
@@ -22,6 +22,12 @@ router.put("/:id", (req, res) => {
 // http: //localhost:8085/api/users/<id> Adds a DELETE route to update a user
 router.delete("/:id", (req, res) => {
   Controllers.userController.deleteUser(req, res);
+});
+
+// Adds a POST route to create a new user
+//http://localhost:8085/api/users/login  Adds a POST route to return user
+router.post("/login", (req, res) => {
+  Controllers.userController.loginUser(req, res);
 });
 
 module.exports = router;
