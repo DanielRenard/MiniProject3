@@ -39,7 +39,7 @@ export default function AddShotFormUncontrolled() {
 
   return (
     <>
-      <div>
+      <div className="card">
         <form onSubmit={handleSubmit}>
           <div className="formRow">
             <label>
@@ -50,7 +50,7 @@ export default function AddShotFormUncontrolled() {
                 name="userName"
                 onChange={(e) => setUserName(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               Name
               <input
@@ -59,7 +59,7 @@ export default function AddShotFormUncontrolled() {
                 name="name"
                 onChange={(e) => setName(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               Description
               <input
@@ -68,7 +68,7 @@ export default function AddShotFormUncontrolled() {
                 name="description"
                 onChange={(e) => setDescription(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               Image
               <input
@@ -77,7 +77,7 @@ export default function AddShotFormUncontrolled() {
                 name="image"
                 onChange={(e) => setImage(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               ID
               <input
@@ -86,7 +86,7 @@ export default function AddShotFormUncontrolled() {
                 name="id"
                 onChange={(e) => setId(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               Set Piece
               <input
@@ -95,7 +95,7 @@ export default function AddShotFormUncontrolled() {
                 name="setPiece"
                 onChange={(e) => setSetPiece(e.target.value)}
               />
-            </label>
+            </label><br/>
             <label>
               Show
               <input
@@ -104,7 +104,7 @@ export default function AddShotFormUncontrolled() {
                 name="show"
                 onChange={(e) => setShow(e.target.value)}
               />
-            </label>
+            </label><br/>
           </div>
           <div className="formRow">
             <button>Submit</button>

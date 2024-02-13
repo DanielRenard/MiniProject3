@@ -4,36 +4,11 @@ import AddShotFormUncontrolled from "./AddShotFormUncontrolled.jsx";
 import axios from "axios";
 import React from "react";
 import { useEffect } from "react";
+import 'C:/Users/danie/git/MiniProject3/client/src/style/card.css' //find proper file path
 
 function CardList() {
-  // const [userName, setUserName] = useState("");
-  // const [id, setId] = useState("");
-  // const [name, setName] = useState("");
-  // const [setPiece, setSetPiece] = useState("");
-  // const [image, setImage] = useState("");
-  // const [show, setShow] = useState("");
-  // const [description, setDescription] = useState("");
+
   const [currentShots, setCurrentShots] = useState([]);
-
-  // const data = {
-  //   userName: userName,
-  //   id: id,
-  //   name: name,
-  //   setpiece: setPiece,
-  //   image: image,
-  //   show: show,
-  //   description: description,
-  // };
-
-  // const shots  = axios("http://localhost:8085/api/shots", {
-  //   method: "GET",
-  //   body: JSON.stringify(data),
-  //   headers: { "Content-Type": "application/json" },
-  // })
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     console.log(data);
-  //   });
 
   useEffect(() => {
     const fetchData = async () => {
