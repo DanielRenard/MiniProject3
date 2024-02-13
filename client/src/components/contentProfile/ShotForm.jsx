@@ -1,20 +1,22 @@
 import { useContext, useState } from "react";
 
-export default function AddShotFormUncontrolled() {
-  const [userName, setUserName] = useState("");
-  const [id, setId] = useState("");
-  const [name, setName] = useState("");
-  const [setPiece, setSetPiece] = useState("");
-  const [image, setImage] = useState("");
-  const [show, setShow] = useState("");
-  const [description, setDescription] = useState("");
-  const [submitResult, setSubmitResult] = useState("");
+export default function ShotForm({ onSubmit, aShot={} }) {
+  const [userName, setUserName] = useState(aShot.userName || "");
+  const [id, setId] = useState(aShot.id || "");
+  const [name, setName] = useState(aShot.name || "");
+  const [setPiece, setSetPiece] = useState(aShot.setPiece || "");
+  const [image, setImage] = useState(aShot.image || "");
+  const [show, setShow] = useState(aShot.show || "");
+  const [description, setDescription] = useState(aShot.description || "");
+  const [dataBaseID, setDataBaseId] = useState(aShot._id || "");
+  // const [submitResult, setSubmitResult] = useState("");
 
   // const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
+      dataBaseID: dataBaseID,
       userName: userName,
       id: id,
       name: name,
@@ -24,17 +26,7 @@ export default function AddShotFormUncontrolled() {
       description: description,
     };
 
-    let result = await fetch("http://localhost:8085/api/shots/newshot", {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-
-    setSubmitResult("Sent");
+    onSubmit(data);
   };
 
   return (
@@ -50,16 +42,18 @@ export default function AddShotFormUncontrolled() {
                 name="userName"
                 onChange={(e) => setUserName(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
-              Name
+              Shot Name
               <input
                 type="text"
                 value={name}
                 name="name"
                 onChange={(e) => setName(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
               Description
               <input
@@ -68,7 +62,8 @@ export default function AddShotFormUncontrolled() {
                 name="description"
                 onChange={(e) => setDescription(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
               Image
               <input
@@ -77,7 +72,8 @@ export default function AddShotFormUncontrolled() {
                 name="image"
                 onChange={(e) => setImage(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
               ID
               <input
@@ -86,7 +82,8 @@ export default function AddShotFormUncontrolled() {
                 name="id"
                 onChange={(e) => setId(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
               Set Piece
               <input
@@ -95,7 +92,8 @@ export default function AddShotFormUncontrolled() {
                 name="setPiece"
                 onChange={(e) => setSetPiece(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
             <label>
               Show
               <input
@@ -104,11 +102,17 @@ export default function AddShotFormUncontrolled() {
                 name="show"
                 onChange={(e) => setShow(e.target.value)}
               />
-            </label><br/>
+            </label>
+            <br />
+            <input
+              type="hidden"
+              value={dataBaseID}
+              name="_id"
+              onChange={(e) => setDataBaseId(e.target.value)}
+            />
           </div>
           <div className="formRow">
             <button>Submit</button>
-            <p>{submitResult}</p>
           </div>
         </form>
       </div>
