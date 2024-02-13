@@ -6,6 +6,7 @@ export default function NavBar() {
     <div className="navbar">
       <NavLink to="/">Home</NavLink>
       <NavLink to="/shotlist">Shot List</NavLink>
+      <NavLink className="right" to="/login">Login</NavLink>
       <NavLink to="/profile">Profile</NavLink>
       <a href="https://outlook.office.com/mail/" target="_blank">
         Outlook
@@ -22,7 +23,7 @@ export default function NavBar() {
       >
         Daybook
       </a>
-      <NavLink className="right" to="/login">Login</NavLink>
+      <NavLink className="right" to="/signup">Sign Up</NavLink>
     </div>
   );
 }
