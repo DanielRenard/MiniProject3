@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-export default function ShotMessage() {
+export default function AddShotFormUncontrolled() {
   const [userName, setUserName] = useState("");
   const [id, setId] = useState("");
   const [name, setName] = useState("");
@@ -9,6 +9,7 @@ export default function ShotMessage() {
   const [show, setShow] = useState("");
   const [description, setDescription] = useState("");
   const [submitResult, setSubmitResult] = useState("");
+
   // const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
@@ -17,7 +18,7 @@ export default function ShotMessage() {
       userName: userName,
       id: id,
       name: name,
-      setpiece: setPiece,
+      setPiece: setPiece,
       image: image,
       show: show,
       description: description,
@@ -38,14 +39,11 @@ export default function ShotMessage() {
 
   return (
     <>
-      <div className="Profile">Here's the Profile</div>
-      <button>Delete Profile</button>
-      <div>Shows</div>
       <div>
         <form onSubmit={handleSubmit}>
           <div className="formRow">
             <label>
-              userName
+              User Name
               <input
                 type="text"
                 value={userName}
