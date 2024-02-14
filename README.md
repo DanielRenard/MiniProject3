@@ -30,7 +30,7 @@ Error: listen EADDRINUSE
     ...
 Once the server is running, test it by visiting the following URL in your browser:
 
-http://localhost:8085/
+http://localhost:5173/
 
 ## files in this repository
 
