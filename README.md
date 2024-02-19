@@ -1,5 +1,7 @@
 # Mini-Project 3
 
+Fullstack Post App using Mongo, Express, React, Node
+
 ## Description
 
 The purpose of the Mini Project is to reinforce skills that have been covered in recent modules.
@@ -7,6 +9,21 @@ The purpose of the Mini Project is to reinforce skills that have been covered in
 We covered connecting your Express server to a database in Module 9. Now it's time to connect your front end to your server!
 
 The goal here is a working full stack application that allows users to sign up/log in, and then interact and work with your application with all of the CRUD operations. (MVP = CRUD)
+
+## Installation
+
+Before you begin, make sure you have Node.js and npm installed on your machine.
+ 1. Clone the repository to your local machine: https://github.com/DanielRenard/MiniProject3.git
+ 2. Navigate to the project directory: cd MINIPROJECT3
+ 3. Install the project dependencies: npm install
+ i. npm install @mui/material @emotion/react @emotion/styled
+ ii. npm install react-router-dom
+
+ ## Usage
+ 1. In your terminal, cd in the server folder. Start the development server: npm run dev
+ 2. Server running at http://127.0.0.1:8085/
+ 3. In a separate terminal, cd in the client folder. Start the development server: npm run dev
+ 4. Open your web browser and navigate to http://localhost:5173 to view the application.
 
 ## MVC Structure
 

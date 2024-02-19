@@ -23,6 +23,7 @@ function CardList() {
 
   useEffect(() => {
     fetchData(); //calling the function
+    // console.log(currentShots)
   }, []);
 
   const handleAddShot = async (data) => {

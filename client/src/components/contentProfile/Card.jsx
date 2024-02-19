@@ -40,7 +40,7 @@ function Card({ shot, onDeleteEvent, onUpdate }) {
       </div>
     );
   } else {
-    template = (
+    template = ( 
       <div>
         <ShotForm aShot={shot} onSubmit={handleEdit} />
         <button onClick={cancelEdit}>Cancel Edit</button>
